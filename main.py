@@ -86,7 +86,7 @@ class Comment(db.Model):
     parent_post = relationship("BlogPost", back_populates="comments")
 
 #Line below only required once, when creating DB.
-#db.create_all()
+db.create_all()
 
 
 login_manager = LoginManager()
