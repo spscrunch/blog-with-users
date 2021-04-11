@@ -53,7 +53,7 @@ class User(UserMixin, db.Model):
     posts = relationship("BlogPost", back_populates="author")
     comments = relationship("Comment", back_populates="comment_author")
 #Line below only required once, when creating DB.
-db.create_all()
+#db.create_all()
 
 
 class BlogPost(db.Model):
@@ -71,7 +71,7 @@ class BlogPost(db.Model):
     comments = relationship("Comment", back_populates="parent_post")
 
 #Line below only required once, when creating DB.
-db.create_all()
+#db.create_all()
 
 class Comment(db.Model):
     __tablename__ = "comments"
@@ -86,7 +86,7 @@ class Comment(db.Model):
     parent_post = relationship("BlogPost", back_populates="comments")
 
 #Line below only required once, when creating DB.
-db.create_all()
+#db.create_all()
 
 
 login_manager = LoginManager()
